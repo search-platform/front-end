@@ -1,0 +1,37 @@
+.card {
+  gap: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--border-radius);
+  background-color: var(--color-purple-light);
+}
+
+.value {
+  gap: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.description {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--color-grey);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}

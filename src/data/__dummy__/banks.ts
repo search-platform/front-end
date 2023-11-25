@@ -12,12 +12,14 @@ export const DUMMY_BANKS: Bank[] = [
       {
         id: 1,
         value: "1-800-432-1000",
-        type: "phone"
+        type: "phone",
+        description: "Customer Service",
       },
       {
         id: 2,
         value: "qwe@qwe.qwe",
-        type: "email"
+        type: "email",
+        description: "Customer Service",
       },
     ]
   },
@@ -32,12 +34,14 @@ export const DUMMY_BANKS: Bank[] = [
       {
         id: 3,
         value: "1-800-432-1000",
-        type: "phone"
+        type: "phone",
+        description: "Customer Service",
       },
       {
         id: 4,
         value: "test@test.com",
-        type: "email"
+        type: "email",
+        description: "Customer Service",
       },
     ]
   }

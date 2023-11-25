@@ -3,7 +3,7 @@ import Button from "@/components/common/Button/Button";
 import styles from "./SearchForm.module.scss";
 import Input from "@/components/common/form/Input/Input";
 
-type SearchFormType = 'banks' | 'phones' | 'emails' | 'all';
+type SearchFormType = 'banks' | 'phones' | 'emails';
 
 function SearchForm () {
   const [type, setType] = useState<SearchFormType>('banks');
@@ -11,7 +11,6 @@ function SearchForm () {
     banks: 'Search for a bank',
     phones: 'Search for a phone',
     emails: 'Search for an email',
-    all: 'Search for a bank, phone or email',
   }
 
   return (
@@ -40,14 +39,6 @@ function SearchForm () {
           className={styles.button}
         >
           Emails
-        </Button>
-        <Button
-          isFullWidth={true}
-          isOutlined={type !== 'all'}
-          onClick={() => setType('all')}
-          className={styles.button}
-        >
-          All
         </Button>
       </div>
 
