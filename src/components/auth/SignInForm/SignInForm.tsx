@@ -1,7 +1,7 @@
 import {useRouter} from 'next/router';
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
-import {signIn, signInFormData, signInFormValidationSchema, testRequest} from '@/data/auth';
+import {signIn, signInFormData, signInFormValidationSchema} from '@/data/auth';
 import FormInput from '@/components/form/FormInput';
 import styles from './SignInForm.module.scss';
 import Button from '@/components/common/Button/Button';
@@ -20,7 +20,7 @@ function SignInForm () {
 
   const handleSignIn = async (data: signInFormData) => {
     try {
-      await testRequest();
+      await signIn(data);
     } catch (error) {
       console.log(error)
     }

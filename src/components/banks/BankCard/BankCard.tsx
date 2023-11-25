@@ -9,8 +9,8 @@ interface BankCardProps {
 
 function BankCard ({ item }: BankCardProps) {
   return (
-    <Link href="/" className={styles.card}>
-      <img src={item.logo} alt={item.name} className={styles.logo} />
+    <Link href={`/bank/${item.id}/`} className={styles.card}>
+      <img src={item.favicon} alt={item.name} className={styles.logo} />
       <Headline level={5} className={styles.name}>
         {item.name}
       </Headline>

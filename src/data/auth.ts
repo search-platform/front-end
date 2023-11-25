@@ -15,22 +15,7 @@ export const signInFormValidationSchema = z.object({
 export type signInFormData = z.infer<typeof signInFormValidationSchema>;
 
 export const signIn = async (data: signInFormData) => {
-  const response = await axios.post(urls.signIn, data, {
-    headers: {
-      'ngrok-skip-browser-warning': 'true',
-    }
-  });
+  const response = await axios.post(urls.signIn, data);
   const responseData = await response.data;
   return responseData;
 };
-
-export const testRequest = async () => {
-  const response = await axios.get(urls.testRequest, {
-    headers: {
-      'ngrok-skip-browser-warning': 'true',
-    }
-  });
-  const responseData = await response.data;
-  console.log('testRequest data', responseData);
-  return responseData;
-}
