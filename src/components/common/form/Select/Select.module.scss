@@ -1,0 +1,46 @@
+.trigger {
+  width: 100%;
+  font-size: 16px;
+  padding: 8px 16px;
+  align-items: center;
+  display: inline-flex;
+  color: var(--color-black);
+  justify-content: space-between;
+  border-radius: var(--border-radius);
+  background-color: var(--color-white);
+  border: 1px solid var(--border-color);
+
+  &:active, &:focus {
+    outline: none;
+    border-color: var(--color-purple);
+  }
+}
+
+.content {
+  width: 100%;
+  border-radius: var(--border-radius);
+  background-color: var(--color-white);
+  border: 1px solid var(--border-color);
+}
+
+.item {
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+
+  &:hover {
+    outline: none;
+  }
+
+  &:not(.selected) {
+    &:hover {
+      background-color: var(--color-purple-light);
+    }
+  }
+}
+
+.selected {
+  color: var(--color-white);
+  background-color: var(--color-purple);
+}

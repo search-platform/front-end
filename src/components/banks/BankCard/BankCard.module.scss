@@ -1,0 +1,19 @@
+.card {
+  display: grid;
+  padding: 14px;
+  align-items: center;
+  grid-column-gap: 8px;
+  text-decoration: none;
+  grid-template-columns: 24px 1fr;
+  border-radius: var(--border-radius);
+  background-color: var(--color-purple-light);
+}
+
+.name {
+  color: var(--color-purple);
+}
+
+.logo {
+  width: auto;
+  height: 24px;
+}

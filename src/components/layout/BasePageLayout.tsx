@@ -3,10 +3,13 @@ import React, { PropsWithChildren } from 'react';
 import styles from './BasePageLayout.module.scss';
 import Header from '../header/Header';
 
-interface BasePageLayoutProps {}
+interface BasePageLayoutProps {
+  isHiddenHeader?: boolean;
+}
 
 export default function BasePageLayout({
   children,
+  isHiddenHeader
 }: PropsWithChildren<BasePageLayoutProps>) {
   // const auth = useAuthGuard({ redirectTo: '/auth/sign-in/' });
 
@@ -16,7 +19,7 @@ export default function BasePageLayout({
 
   return (
     <div className={styles.container}>
-      <Header />
+      {!isHiddenHeader ? <Header /> : null}
       <main className={cx(styles.main)}>
         {children}
       </main>

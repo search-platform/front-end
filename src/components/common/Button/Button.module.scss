@@ -1,0 +1,37 @@
+.button {
+  transition: all 0.3s ease;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: none;
+  color: var(--color-white);
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.purple {
+  background-color: var(--color-purple);
+
+  &:hover {
+    background-color: var(--color-purple-dark);
+  }
+
+  &.disabled {
+    background-color: var(--color-purple-light);
+  }
+
+  &.outlined {
+    color: var(--color-purple);
+    border: 1px solid var(--color-purple);
+    background-color: transparent;
+  }
+}
+
+.small {
+  padding: 6px 12px;
+  font-size: 14px;
+}

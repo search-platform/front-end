@@ -1,0 +1,21 @@
+.box {
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  font-size: 16px;
+  padding: var(--input-padding);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-purple);
+  }
+}
+
+.error {
+  border-color: var(--color-red);
+}

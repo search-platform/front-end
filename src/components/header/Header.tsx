@@ -1,7 +1,10 @@
+import Logo from "../logo/Logo";
+import styles from './Header.module.scss';
+
 function Header () {
   return (
-    <header>
-      Header
+    <header className={styles.header}>
+      <Logo />
     </header>
   );
 }
