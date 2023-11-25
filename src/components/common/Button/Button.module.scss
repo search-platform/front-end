@@ -21,7 +21,8 @@
   }
 
   &.disabled {
-    background-color: var(--color-purple-light);
+    background-color: #EDEDED;
+    color: rgba(0, 8, 47, 0.28);
   }
 
   &.outlined {
