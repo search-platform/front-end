@@ -17,6 +17,7 @@ export interface Bank {
   orgLogoUrl: string;
   orgAddress: string;
   contacts: Contact[];
+  countryName: string;
 }
 
 export interface BankContact {

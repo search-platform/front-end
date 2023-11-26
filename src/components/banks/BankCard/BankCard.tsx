@@ -14,6 +14,7 @@ function BankCard ({ item }: BankCardProps) {
       <Headline level={5} className={styles.name}>
         {item.orgName}
       </Headline>
+      <span className={styles.country}>({item.countryName})</span>
     </Link>
   );
 }
