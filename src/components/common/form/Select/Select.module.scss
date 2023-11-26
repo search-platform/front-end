@@ -1,3 +1,10 @@
+.box {
+  width: 100%;
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
 .trigger {
   width: 100%;
   font-size: 16px;

@@ -1,6 +1,7 @@
 import {z} from "zod";
 import {appConfig} from "../../config/appConfig";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const urls = {
   signIn: `${appConfig.apiHost}/auth/token`,
@@ -16,6 +17,10 @@ export type signInFormData = z.infer<typeof signInFormValidationSchema>;
 
 export const signIn = async (data: signInFormData) => {
   const response = await axios.post(urls.signIn, data);
-  const responseData = await response.data;
+  const responseData = response.data;
   return responseData;
 };
+
+export const signOut = () => {
+  Cookies.remove('token');
+}

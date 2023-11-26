@@ -5,6 +5,7 @@ import {signIn, signInFormData, signInFormValidationSchema} from '@/data/auth';
 import FormInput from '@/components/form/FormInput';
 import styles from './SignInForm.module.scss';
 import Button from '@/components/common/Button/Button';
+import Cookies from 'js-cookie';
 
 function SignInForm () {
   const router = useRouter();
@@ -20,8 +21,14 @@ function SignInForm () {
 
   const handleSignIn = async (data: signInFormData) => {
     try {
-      await signIn(data);
+      const response = await signIn(data);
+      const { token } = response;
+      if (token) {
+        Cookies.set('JWT', token);
+        void router.push('/');
+      }
     } catch (error) {
+      console.log(error)
     }
   }
 
