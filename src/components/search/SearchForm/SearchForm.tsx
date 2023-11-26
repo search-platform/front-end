@@ -86,7 +86,7 @@ function SearchForm () {
 
         <div className={styles.inputGroup}>
           <Input name="value" placeholder={placeholders[type]} onChange={handleValueChange} />
-          <Button color="purple" onClick={handleSearch}>Search</Button>
+          <Button color="purple" onClick={handleSearch} isLoading={isLoading}>Search</Button>
         </div>
       </div>
 

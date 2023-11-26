@@ -6,11 +6,29 @@ import {useBankById} from "@/data/banks";
 import ContactsList from "@/components/contacts/ContactsList/ContactsList";
 import isClient from "../../../../utils/isClient";
 import Cookies from 'js-cookie';
+import axios from "axios";
+import {useEffect, useState} from "react";
 
 function BankPage () {
   const router = useRouter();
+  const [logo, setLogo] = useState('');
   const bankId = router.query.id as string;
   const { data: bank } = useBankById(bankId ? parseInt(bankId) : 0);
+
+  // useEffect(() => {
+  //   if (bank) {
+  //     axios
+  //       .get(`/api/chat/get-bank-logo?name=${bank.name}&country=${bank.country.name}`)
+  //       .then(({ data }) => {
+  //         if (data.url) {
+  //           setLogo(data.url);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       })
+  //   }
+  // }, [bank])
 
   if (isClient && !Cookies.get('JWT')) {
     void router.push('/auth/sign-in');
@@ -20,7 +38,7 @@ function BankPage () {
     return null;
   }
 
-  const image = bank.logoUrl ? bank.logoUrl : bank.favicon ? bank.favicon : '';
+  const image = bank.favicon;
 
   return (
     <div>

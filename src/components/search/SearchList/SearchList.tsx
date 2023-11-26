@@ -10,7 +10,7 @@ function SearchList ({ items }: SearchListProps) {
   return (
     <ul className={styles.list}>
       {items.map((bank) => (
-        <BankCard key={bank.id} item={bank} />
+        <BankCard key={bank.orgId} item={bank} />
       ))}
     </ul>
   );

@@ -48,6 +48,7 @@ function ConfirmAddBankModal ({isOpen, bankName, onClose}: ConfirmAddBankModalPr
         void router.push(`/bank/${response.id}`);
       }
     } catch (error) {
+      setError('Bank wasn\'t found!');
       console.log(error);
     } finally {
       setIsLoading(false);
