@@ -1,12 +1,14 @@
+import cx from 'classnames';
 import styles from './FieldError.module.scss';
 
 interface FieldErrorProps {
   error: string;
+  className?: string;
 }
 
-function FieldError({ error }: FieldErrorProps) {
+function FieldError({ error, className }: FieldErrorProps) {
   return (
-    <div className={styles.error}>
+    <div className={cx(styles.error, className)}>
       {error}
     </div>
   );

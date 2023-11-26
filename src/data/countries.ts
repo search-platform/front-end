@@ -3,7 +3,7 @@ import {appConfig} from "../../config/appConfig"
 import axios from "axios";
 
 const urls = {
-  countries: `${appConfig.apiHost}/v1/countries`
+  countries: `${appConfig.apiHost}/api/v1/countries`
 }
 
 export interface Country {

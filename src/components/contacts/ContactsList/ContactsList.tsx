@@ -1,9 +1,10 @@
 import { Contact } from "@/data/contacts";
 import ContactCard from "../ContactCard/ContactCard";
 import styles from './ContactsList.module.scss';
+import {BankContact} from "@/data/banks";
 
 interface ContactsListProps {
-  items: Contact[];
+  items: BankContact[];
 }
 
 function ContactsList({ items }: ContactsListProps) {

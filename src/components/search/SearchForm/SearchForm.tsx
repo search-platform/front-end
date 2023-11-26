@@ -24,11 +24,19 @@ function SearchForm () {
     emails: 'Search for an email',
   }
 
+  const handleChangeType = (type: SearchFormType) => () => {
+    setType(type);
+    setIsNotFoundBlockVisible(false);
+    setBanks([]);
+    setValue('');
+  }
+
   const handleSearch = async () => {
     setIsLoading(true);
     try {
       const banks = await getBanks(value);
       if (banks.length === 0) {
+        setBanks([]);
         setIsNotFoundBlockVisible(true);
         return;
       }
@@ -53,7 +61,7 @@ function SearchForm () {
           <Button
             isFullWidth={true}
             isOutlined={type !== 'banks'}
-            onClick={() => setType('banks')}
+            onClick={handleChangeType('banks')}
             className={styles.button}
           >
             Banks
@@ -61,7 +69,7 @@ function SearchForm () {
           <Button
             isFullWidth={true}
             isOutlined={type !== 'phones'}
-            onClick={() => setType('phones')}
+            onClick={handleChangeType('phones')}
             className={styles.button}
           >
             Phones
@@ -69,7 +77,7 @@ function SearchForm () {
           <Button
             isFullWidth={true}
             isOutlined={type !== 'emails'}
-            onClick={() => setType('emails')}
+            onClick={handleChangeType('emails')}
             className={styles.button}
           >
             Emails

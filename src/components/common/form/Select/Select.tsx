@@ -4,6 +4,7 @@ import * as RadixSelect from "@radix-ui/react-select";
 import cx from "classnames";
 import IconChevronDown from "../../icons/IconChevronDown";
 import FieldLabel from "../FieldLabel/FieldLabel";
+import FieldError from "../FieldError/FieldError";
 
 export interface SelectOption {
   label: string;
@@ -19,6 +20,7 @@ export interface SelectProps {
   onChange?: (value: string) => void;
   value?: string;
   withEmptyOption?: boolean;
+  errorMessage?: string;
 }
 
 const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select ({
@@ -30,6 +32,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select ({
   onChange,
   value,
   withEmptyOption,
+  errorMessage,
   ...props
 }, ref) {
   return (
@@ -45,7 +48,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select ({
         <RadixSelect.Portal>
           <RadixSelect.Content className={styles.content} position="popper" sideOffset={12}>
             <RadixSelect.ScrollUpButton className={styles.scrollButton}>
-              <IconChevronDown />
+              <IconChevronDown className={styles.topChevronIcon} />
             </RadixSelect.ScrollUpButton>
             <RadixSelect.Viewport className={styles.viewport}>
               {withEmptyOption ? (
@@ -69,6 +72,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select ({
           </RadixSelect.Content>
         </RadixSelect.Portal>
       </RadixSelect.Root>
+      {errorMessage ? <FieldError error={errorMessage} className={styles.errorMessage} /> : null}
     </div>
   );
 });
