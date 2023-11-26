@@ -50,7 +50,10 @@ function BankPage () {
         <address className={styles.address}>{bank.address}</address>
         <a href={bank.url} target="__blank" className={styles.url}>{bank.url}</a>
       </div>
-      <ContactsList items={bank.orders} />
+      <ContactsList
+        organizationId={bank.id}
+        items={bank.orders}
+      />
     </div>
   );
 }
