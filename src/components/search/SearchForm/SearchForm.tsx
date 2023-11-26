@@ -85,7 +85,7 @@ function SearchForm () {
       {isNotFoundBlockVisible && type === 'banks' ? <BankNotFound bankName={value} /> : null}
 
       {banks.length > 0 ? (
-        <SearchList items={[]} />
+        <SearchList items={banks} />
       ) : null}
     </>
   );

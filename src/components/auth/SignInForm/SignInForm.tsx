@@ -12,7 +12,7 @@ function SignInForm () {
 
   const { control, formState, handleSubmit } = useForm({
     defaultValues: {
-      email: '',
+      login: '',
       password: '',
     },
     resolver: zodResolver(signInFormValidationSchema),
@@ -34,7 +34,7 @@ function SignInForm () {
 
   return (
     <form onSubmit={handleSubmit(handleSignIn)} className={styles.form}>
-      <FormInput name="email" label="Email:" control={control} />
+      <FormInput name="login" label="Username:" control={control} />
       <FormInput name="password" type="password" label="Password:" control={control} />
       <Button onClick={() => {}} isDisabled={!formState.isValid}>Sign In</Button>
     </form>

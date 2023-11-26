@@ -1,5 +1,6 @@
-import { Contact } from "./contacts";
 import axios from "axios";
+import Cookies from "js-cookie";
+import { Contact } from "./contacts";
 import {appConfig} from "../../config/appConfig";
 
 const urls = {
@@ -7,19 +8,21 @@ const urls = {
 }
 
 export interface Bank {
-  id: number;
-  name: string;
-  favicon: string;
-  logo: string;
-  address: string;
-  url: string;
+  orgId: number;
+  orgUrl: string;
+  orgName: string;
+  orgFavicon: string;
+  orgLogoUrl: string;
+  orgAddress: string;
   contacts: Contact[];
 }
 
 export const getBanks = async (query: string) => {
+  const JWT = Cookies.get('JWT');
   const { data } = await axios.get(urls.search(query), {
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Bearer': JWT,
     }
   });
   return data;

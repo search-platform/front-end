@@ -9,7 +9,7 @@ const urls = {
 }
 
 export const signInFormValidationSchema = z.object({
-  email: z.string().email(),
+  login: z.string(),
   password: z.string().min(8),
 });
 
