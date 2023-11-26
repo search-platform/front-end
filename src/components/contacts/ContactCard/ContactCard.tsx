@@ -6,6 +6,7 @@ import IconClose from '@/components/common/icons/IconClose';
 import {BankContact} from '@/data/banks';
 import ConfirmRemoveContact from '@/components/modals/ConfirmRemoveContact/ConfirmRemoveContact';
 import {useState} from 'react';
+import ConfirmEditContact from '@/components/modals/EditContact/EditContact';
 
 interface ContactCardProps {
   organizationId: number;
@@ -13,9 +14,11 @@ interface ContactCardProps {
 }
 
 function ContactCard ({contact, organizationId}: ContactCardProps) {
+  const [isEditOpen, setIsEditOpen] = useState(false);
   const [isConfirmRemoveOpen, setIsConfirmRemoveOpen] = useState(false);
 
   const handleEdit = () => {
+    setIsEditOpen(true);
   }
 
   const handleDelete = () => {
@@ -51,6 +54,13 @@ function ContactCard ({contact, organizationId}: ContactCardProps) {
       <ConfirmRemoveContact
         isOpen={isConfirmRemoveOpen}
         onClose={() => {setIsConfirmRemoveOpen(false);}}
+        contact={contact}
+        organizationId={1}
+      />
+
+      <ConfirmEditContact
+        isOpen={isEditOpen}
+        onClose={() => {setIsEditOpen(false);}}
         contact={contact}
         organizationId={1}
       />

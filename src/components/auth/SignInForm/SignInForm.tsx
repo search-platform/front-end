@@ -34,7 +34,7 @@ function SignInForm () {
 
   return (
     <form onSubmit={handleSubmit(handleSignIn)} className={styles.form}>
-      <FormInput name="login" label="Username:" control={control} />
+      <FormInput name="login" type="email" label="Username:" control={control} />
       <FormInput name="password" type="password" label="Password:" control={control} />
       <Button onClick={() => {}} isDisabled={!formState.isValid}>Sign In</Button>
     </form>
